@@ -3,6 +3,7 @@ import Home from "./Component/Customer/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Component/Customer/Navbar/Navbar";
 import Hero from "./Component/Customer/Hero/Hero";
+import Service from "./Component/Customer/Service/Service";
 
 const App = () => {
   const heroData = [
@@ -15,11 +16,11 @@ const App = () => {
 
   return (
     <div>
+      <Navbar  />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/service" element={<Service />} />
       </Routes>
-
-      <Navbar />
 
       {/* <Hero
         heroData={heroData[heroCount]}
