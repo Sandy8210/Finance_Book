@@ -2,31 +2,36 @@ import { useState } from "react";
 import Home from "./Component/Customer/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Component/Customer/Navbar/Navbar";
-import Hero from "./Component/Customer/Hero/Hero";
 import Service from "./Component/Customer/Service/Service";
+import About from "./Component/Customer/About/About";
+import Contact from "./Component/Customer/Form/Contact";
+import Profile from "./Component/User/Profile";
+import { Auth } from "./Component/utils/Auth";
+import { AuthenticationProvider } from "./Component/utils/AuthenticationProvider";
+import Login from "./Component/LoginAuthentication/Login";
 
 const App = () => {
-  const heroData = [
-    { text1: "Image 1", text2: "Image Text1- 2" },
-    { text1: "Image 2", text2: "Image Text2- 2" },
-    { text1: "Image 3", text2: "Image Text3- 2" },
-  ];
-
-  const [heroCount, setHeroCount] = useState(0);
-
   return (
-    <div>
-      <Navbar  />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/service" element={<Service />} />
-      </Routes>
+    <div className=''>
+      <Auth>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/service' element={<Service />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route
+            path='/profile'
+            element={
+              <AuthenticationProvider>
+                <Profile />
+              </AuthenticationProvider>
+            }
+          />
 
-      {/* <Hero
-        heroData={heroData[heroCount]}
-        heroCount={heroCount}
-        setHeroCount={setHeroCount}
-      /> */}
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      </Auth>
     </div>
   );
 };
