@@ -8,3 +8,14 @@ body {
   font-size: 16px;
   background-color: #333;
 }
+.servicecontainer{
+  margin-top: 50px;
+  margin-left: 170px;
+  text-align: center;
+}
+.serviceheading{
+
+  text-align: center;
+  align-items: center;
+ color: aqua;
+}
