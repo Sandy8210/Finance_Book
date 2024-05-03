@@ -2,7 +2,15 @@ import React from 'react'
 
 const Service = () => {
   return (
-    <div>Service</div>
+    <div className='servicecontainer'>
+      <div className="card" style={{ width: '18rem' }}>
+        <img src="https://templates.thememodern.com/finance/images/Services/3.jpg" className="card-img-top" alt="" style={{ width: '290px' }} />
+        <div className="card-body">
+          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+
   )
 }
 
